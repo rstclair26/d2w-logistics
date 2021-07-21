@@ -25,7 +25,7 @@ Github repo: https://github.com/rstclair26/dttw-logistics
 	- User's last name
 	- Email address
 	- Mobile phone number (reserved for future use for SMS alerts, etc.)
-	- Shipper's primary market/type of goods
+	- Shipper's primary market/type of goods (picklist with a few examples, this can get complicated, for MVP we should keep it to a couple examples)
 	- Password
 	- Confirm password
 	
@@ -46,6 +46,7 @@ Github repo: https://github.com/rstclair26/dttw-logistics
 	- Destination port(s)
 	- Number of 40-foot containers
 	- Refrigerated indicator
+	- Hazardous / Gov Regulated indicator
 	- Button for redirection to page for completing an inquiry/reservation about the capacity
 
 - For capacity that is being offered by the current user, buttons for editing and deleting the capacity will be shown
