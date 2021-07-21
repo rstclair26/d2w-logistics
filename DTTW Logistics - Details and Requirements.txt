@@ -41,7 +41,7 @@ Github repo: https://github.com/rstclair26/dttw-logistics
 		a separate section for easier management
 
 - Available capacity listing will show:
-	- Date of availability
+	- Scheduled date of departure
 	- Departure port
 	- Destination port(s)
 	- Number of 40-foot containers
@@ -55,7 +55,7 @@ Github repo: https://github.com/rstclair26/dttw-logistics
 - Listing page will have a button for offering new capacity
 
 - Page for adding or editing a capacity will have fields for:
-	- Date of availability (date picker - see wireframe)
+	- Scheduled date of departure (date picker - see wireframe)
 	- Departure port
 	- Destination port(s) (should allow selecting multiple ports from scrollable list)
 	- Number of 40-foot containers (scrollable number selector - see wireframe)
@@ -64,11 +64,11 @@ Github repo: https://github.com/rstclair26/dttw-logistics
 
 - Inquiry/reservation page will have the following fields:
 	- Uneditable/display-only capacity information:
-		- Date of availability
+		- Scheduled date of departure
 		- Departure port
 		- Number of 40-foot containers
 		- Refrigerated indicator
-	- Date needed (date picker - see wireframe; include validation that this date has to be equal to or after the available date)
+	- Date needed (date picker - see wireframe; include validation that this date has to be before the scheduled departure date)
 	- Destination port (drop-down showing the destination ports defined for the capacity)
 	- Email address for contact (pre-populated with email address in user's profile)
 
