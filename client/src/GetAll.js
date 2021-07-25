@@ -22,19 +22,38 @@ const GetAll = (props) => {
         <div>
             <table>
                 <thead>
-                    <th>Capacity Info</th>
-                    <th>TBD</th>
+                    <th>Departure Date</th>
+                    <th>Departure Port</th>
+                    <th>Destination Port</th>
+                    <th>40s Avail</th>
+                    <th>Refrig</th>
+                    <th>Haz / Reg</th>
+                    <th>Inquire</th>
                 </thead>
                 <tbody>
                     {
                         allCapacity.map((capacity, index) => (
                         <tr>
                             <td>
-                                <Link to={ `/capacity/${capacity._id}`} >{capacity.name} </Link>
+                                <p>{capacity.departureDate} </p>
                             </td>
                             <td>
-                            <DeleteButton _id={ capacity._id }/>
-                                <Link to={ `/capacity/${capacity._id}/edit`}><button>Edit</button></Link>
+                                <p>{capacity.departurePort}</p>
+                            </td>
+                            <td>
+                                <p>{capacity.destinationPort}</p>
+                            </td>
+                            <td>
+                                <p>{capacity.fortiesAvailable}</p>
+                            </td>
+                            <td>
+                                <p>{capacity.refrigerated}</p>
+                            </td>
+                            <td>
+                                <p>{capacity.hazardous}</p>
+                            </td>
+                            <td>
+                                <Link to={ `/capacity/${capacity._id}/details`}><button>Inquire</button></Link>
                             </td>
                         </tr>
                         ))
