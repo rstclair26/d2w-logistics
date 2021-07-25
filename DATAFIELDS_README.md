@@ -8,4 +8,5 @@ Destination Port = destinationPort
 40s Avail = fortiesAvailable
 Refrigerated = refrigerated
 Hazardous = hazardous
+Type of goods allowed = goodsType
                     
