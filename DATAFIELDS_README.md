@@ -9,4 +9,7 @@ Destination Port = destinationPort
 Refrigerated = refrigerated
 Hazardous = hazardous
 Type of goods allowed = goodsType
+
+Date capacity needed = dateNeeded
+Capacity contact email = email
                     
