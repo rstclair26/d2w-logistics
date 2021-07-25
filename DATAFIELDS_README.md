@@ -1,5 +1,5 @@
 # d2w-logistics
-Coding Dojo group project
+Coding Dojo group project [OPEN IN EDIT MODE TO READ]
                  
 db name = capacity
 Departure Date = departureDate
