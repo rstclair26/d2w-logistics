@@ -6,10 +6,10 @@ Database name: "d2wLogisticsDB" (as set up in .env file)
 Collection names: "Users", "Capacities", "Inquiries"
 
 "Users" field names:
-  - Company name: "companyName"
-  - Primary market/type of goods transported: "goodsType"
   - First name: "firstName"
   - Last name: "lastName"
+  - Company name: "companyName"
+  - Primary market/type of goods transported: "goodsType"
   - Email address: "email"
   - Mobile phone number: "mobilePhone"
   - Password: "password" (encrypted)
@@ -19,9 +19,9 @@ Collection names: "Users", "Capacities", "Inquiries"
   - Departure Port: "departurePort"
   - Destination Port: "destinationPort"
   - Forties/FEUs Available: "numFeuAvailable"
+  - Type of goods allowed: "goodsType"
   - Refrigerated: "isRefrigerated"
   - Hazardous: "allowHazardous"
-  - Type of goods allowed: "goodsType"
 
 "Inquiries" field names:
   - Capacity ID: "capacity_id" (foreign key to Capacities)
