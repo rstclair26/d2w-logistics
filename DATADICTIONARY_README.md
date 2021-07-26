@@ -1,6 +1,3 @@
-# d2w-logistics
-Coding Dojo group project [OPEN IN EDIT MODE TO READ]
-                 
 D2W LOGISTICS DATA DICTIONARY
 -----------------------------
 
