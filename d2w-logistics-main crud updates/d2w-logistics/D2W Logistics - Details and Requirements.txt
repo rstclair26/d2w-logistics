@@ -1,0 +1,91 @@
+---------------------------------
+P&A Group Project (D2W Logistics)
+---------------------------------
+
+- Overview: B2B-focused application for managing offers and inquiries related to overseas container freight
+	capacity for last-minute shipping needs
+	- Users would be shipping businesses that are looking for and/or have additional container freight capacity
+		to be used for fulfilling overbooked shipments or unscheduled, last-minute shipping requests
+
+
+Github repo: https://github.com/rstclair26/d2w-logistics
+
+
+*** MVP REQUIREMENTS ***
+------------------------
+
+- Application home page should welcome user and prompt for a login
+	- Link or button for redirection to an account registration page will also be included for new users
+
+- Home page/login page will have email and password prompts
+
+- Registration page will have prompts for:
+	- Name of shipping company
+	- User's first name
+	- User's last name
+	- Email address
+	- Mobile phone number (reserved for future use for SMS alerts, etc.)
+	- Shipper's primary market/type of goods (drop-down with hard-coded examples - would be database-driven later)
+	- Password
+	- Confirm password
+	
+- All fields on registration page are required; email format check; password match check
+
+- Once registered, user is automatically logged in (not redirected back to login)
+
+- After login or registration/login, user is presented with list of all available container capacity that matches
+	their primary market
+	- There will be an button/checbox/etc. to allow the user to toggle between showing available capacity for just
+		their primary market (default view upon login) and showing all available capacity
+	- The capacity that the user has offered will either be shown at the top of the listing or will be shown in
+		a separate section for easier management
+
+- Available capacity listing will show:
+	- Scheduled date of departure
+	- Departure port
+	- Destination port(s)
+	- Number of 40-foot containers
+	- Refrigerated indicator
+	- Hazardous/government-regulated indicator
+	- Button for redirection to page for completing an inquiry/reservation about the capacity
+
+- For capacity that is being offered by the current user, buttons for editing and deleting the capacity will be shown
+	- Might add a way to also mark a capacity as reserved so that it can be highlighted on the shipper's capacity
+		listing to differentiate that capacity from ones that are still available
+
+- Listing page will have a button for offering new capacity
+
+- Page for adding or editing a capacity will have fields for:
+	- Scheduled date of departure (date picker - see wireframe)
+	- Departure port
+	- Destination port(s) (should allow selecting multiple ports from scrollable list)
+	- Number of 40-foot containers (scrollable number selector - see wireframe)
+	- Refrigerated indicator
+	- Type of goods allowed or "unrestricted" (would be used for matching to shipper's primary market)
+	- Email address of contact (new capacity screen will pre-populate this with email address in user's profile)
+
+- Inquiry/reservation page will have the following fields:
+	- Uneditable/display-only capacity information:
+		- Scheduled date of departure
+		- Departure port
+		- Number of 40-foot containers
+		- Refrigerated indicator
+		- Hazardous/government-regulated indicator
+		- Type of goods allowed
+	- Date needed (date picker - see wireframe; include validation that this date has to be before the scheduled departure date)
+	- Destination port (drop-down showing the destination ports defined for the capacity)
+	- Email address for contact (pre-populated with email address in user's profile)
+
+- Submitted inquiry/reservation request will send an email to the shipper who listed the capacity with the details
+	of the request
+	- Future feature would also send them an SMS to alert of a new request
+
+
+*** FEATURE BACKLOG ***
+-----------------------
+
+- SMS alerts for new reservation requests and availability of new capacity
+
+- Ability to specify the portion of the capacity needed when making a reservation
+	- This would be coupled with the shipper's ability to mark only a portion of a capacity as reserved
+		thereby allowing the remainder of the capacity to be available for other reservations
