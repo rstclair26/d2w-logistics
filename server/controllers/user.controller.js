@@ -63,7 +63,7 @@ module.exports.login = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json({ message: "Invalid login attempt" });
+            res.status(400).json({ message: "Login failed - please try again" });
         })
 }
 
