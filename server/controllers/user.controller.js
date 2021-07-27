@@ -47,7 +47,7 @@ module.exports.login = (req, res) => {
                                     userLoggedIn: {
                                         firstName: user.firstName,
                                         lastName: user.lastName,
-                                        role: user.role
+                                        companyName: user.companyName
                                     }
                                 })
                         } else {
