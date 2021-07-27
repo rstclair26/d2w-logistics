@@ -9,7 +9,7 @@ const GetAll = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/d2wLogisticsDB") //notes: use the same string that works for a 'get' in postman
             .then((res) => {
-                console.log(res.data); //this is just checking that the data came back correctly in the console
+                console.log(res.data); //this is just checking that the data returned correctly in the console
                 //need state to hold onto the capacity instance data we just called, do this above with const all
                 setAllD2wLogisticsDB(res.data);
             })
