@@ -1,3 +1,125 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+.App , .container{
+  min-height: 100vh;
+  margin: 10px;
   text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+
+
+
+.box-dashboard{
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items:center;
+  min-width:60ch;
+  min-height: 60vh;
+  border: solid 1px #cc644a;
+  background-image: url("./images/freight.jpg");
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.0px );
+  -webkit-backdrop-filter: blur( 16.0px );
+  border-radius: 5px;
+  padding: 20px;
+  border: 2px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+main{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.d2w-logo{
+    display:flex;
+    width: 25ch;
+    height: 10vh;
+    object-fit: cover;
+
+}
+
+form input{
+  position:relative;
+  width: 40ch;
+  height: 3rem;
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+select{
+  position:relative;
+  width: 40ch;
+  height: 3rem;
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+.big-text{
+  position:relative;
+  font-family: 'Mulish', sans-serif;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 5px 4px rgb(1, 2, 4);
+}
+
+.error-text{
+  color: rgb(199, 14, 14);
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  justify-content: left;
+  font-weight: 500;
+}
+
+input:focus{
+  background-color: rgb(228, 183, 179);
+  border-color: rgb(130, 10, 10);
+}
+
+
+input:hover{
+  background-color: rgb(221, 154, 146);
+  border-color: rgb(130, 10, 10);
+}
+
+.text{
+  color: rgb(255, 255, 255);
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  justify-content: left;
+  font-weight: 700;
+  text-shadow: 1px 4px 2px  #000;
+}
+
+
+button{
+  margin: 20px;
+  font-family: 'Mulish', sans-serif;
+  color: rgb(255, 255, 255);
+  width: 25ch;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: solid gray;
+ color: rgba(255, 255, 255, 0.96);
+ background: #1a5cc0;
+ box-shadow:  2px 5px 4px black;
+}
+button:hover{
+  border: 3px solid #1a5cc0;
+  background: #d4dfee;
+  color: rgb(7, 4, 4);
 }
