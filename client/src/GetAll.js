@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link, navigate } from '@reach/router';
 import axios from 'axios';
-import DeleteButton from './DeleteButton';
+//import DeleteButton from './DeleteButton';
 
 const GetAll = (props) => {
-    const [ allCapacity, setAllCapacity ] = useState([]); // notes : put in an array, as there is an array of objects expected, see postman which gets back and array of objects
+    const [ allD2wLogisticsDB, setAllD2wLogisticsDB ] = useState([]); // notes : put in an array, as there is an array of objects expected, see postman which gets back and array of objects
     
     useEffect(() => {
-        axios.get("http://localhost:8000/api/capacity") //notes: use the same string that works for a 'get' in postman
+        axios.get("http://localhost:8000/api/d2wLogisticsDB") //notes: use the same string that works for a 'get' in postman
             .then((res) => {
                 console.log(res.data); //this is just checking that the data came back correctly in the console
-                //need state to hold onto the data we just called, do this above with const all
-                setAllCapacity(res.data);
+                //need state to hold onto the capacity instance data we just called, do this above with const all
+                setAllD2wLogisticsDB(res.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -25,35 +25,35 @@ const GetAll = (props) => {
                     <th>Departure Date</th>
                     <th>Departure Port</th>
                     <th>Destination Port</th>
-                    <th>40s Avail</th>
-                    <th>Refrig</th>
-                    <th>Haz / Reg</th>
+                    <th>FEUs</th>
+                    <th>Ref</th>
+                    <th>Haz</th>
                     <th>Inquire</th>
                 </thead>
                 <tbody>
                     {
-                        allCapacity.map((capacity, index) => (
+                        allD2wLogisticsDB.map((d2wLogisticsDB, index) => (
                         <tr>
                             <td>
-                                <p>{capacity.departureDate} </p>
+                                <p>{d2wLogisticsDB.departureDate} </p>
                             </td>
                             <td>
-                                <p>{capacity.departurePort}</p>
+                                <p>{d2wLogisticsDB.departurePort}</p>
                             </td>
                             <td>
-                                <p>{capacity.destinationPort}</p>
+                                <p>{d2wLogisticsDB.destinationPort}</p>
                             </td>
                             <td>
-                                <p>{capacity.fortiesAvailable}</p>
+                                <p>{d2wLogisticsDB.numFeuAvailable}</p>
                             </td>
                             <td>
-                                <p>{capacity.refrigerated}</p>
+                                <p>{d2wLogisticsDB.isRefrigerated}</p>
                             </td>
                             <td>
-                                <p>{capacity.hazardous}</p>
+                                <p>{d2wLogisticsDB.allowHazardous}</p>
                             </td>
                             <td>
-                                <Link to={ `/capacity/${capacity._id}/details`}><button>Inquire</button></Link>
+                                <Link to={ `/capacity/${d2wLogisticsDB._id}/details`}><button>Inquire</button></Link>
                             </td>
                         </tr>
                         ))

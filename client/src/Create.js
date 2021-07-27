@@ -7,41 +7,23 @@ const Create = (props) => {
     const [ departureDate, setDepartureDate ] = useState("");
     const [ departurePort, setDeparturePort ] = useState("");
     const [ destinationPort, setDestinationPort ] = useState("");
-    const [ fortiesAvailable, setFortiesAvailable ] = useState("");
-    const [ refrigerated, setRefrigerated ] = useState("");
-    const [ hazardous, setHazardous ] = useState("");
+    const [ numFeuAvailable, setNumFeuAvailable ] = useState("");
     const [ goodsType, setGoodsType ] = useState("");
+    const [ isRefrigerated, setIsRefrigerated ] = useState("");
+    const [ allowHazardous, setAllowHazardous ] = useState("");
     const [ errs, setErrs ] = useState({});
-
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/capacity/' + props.id)
-            .then((res) => {
-                console.log(res.data); 
-                let capacity = res.data;
-                setDepartureDate(capacity.departureDate);
-                setDeparturePort(capacity.departurePort);
-                setDestinationPort(capacity.destinationPort);
-                setFortiesAvailable(capacity.fortiesAvailable);
-                setRefrigerated(capacity.refrigerated);
-                setHazardous(capacity.hazardous);
-                setGoodsType(capacity.goodsType);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        }, [props.id ]);
 
     const submitHandler = (e) => {
         e.preventDefault(); //bring in the event with 'e' and prevent default refresh of capacity
-        
-        axios.put("http://localhost:8000/api/capacity/" + props.id, {
+
+        axios.put("http://localhost:8000/api/d2wLogisticsDB/" + props.id, {
             departureDate: departureDate,
             departurePort: departurePort,
             destinationPort: destinationPort,
-            fortiesAvailable: fortiesAvailable,
-            refrigerated: refrigerated,
-            hazardous: hazardous,
+            numFeuAvailable: numFeuAvailable,
             goodsType: goodsType,
+            isRefrigerated: isRefrigerated,
+            allowHazardous: allowHazardous,
 
             })
             .then((res) => {
@@ -51,7 +33,7 @@ const Create = (props) => {
                 }
                 else {
                     console.log(res.data)
-                    navigate("/capacity/" + props.id); //this takes the :id via props so after editing user is now on the details
+                    navigate("/d2wLogisticsDB/" + props.id); //this takes the :id via props so after editing user is now on the details
                 }
             })
             .catch((err) => {
@@ -103,34 +85,18 @@ const Create = (props) => {
                     }
                 </div>
                 <div>
-                    <label> Number of Forties </label>
+                    <label> Number of FEUs </label>
                     <input type="number"
-                    name="fortiesAvailable"
+                    name="numFeuAvailable"
                     min="0"
-                    value={fortiesAvailable}
-                    onChange={ (e) => setFortiesAvailable( e.target.value ) }
+                    value={numFeuAvailable}
+                    onChange={ (e) => setNumFeuAvailable( e.target.value ) }
                     />
                     {
                         errs.skills ?
-                        <span className="error-text">{errs.fortiesAvailable.message}</span>
+                        <span className="error-text">{errs.numFeuAvailable.message}</span>
                             : null
                     }
-                </div>
-                <div>
-                    <input type="checkbox"
-                    name="refrigerated"
-                    checked={refrigerated}
-                    onChange={ () => setRefrigerated( !refrigerated ) }
-                    />
-                    <label> Refrigerated </label>
-                </div>
-                <div>
-                    <input type="checkbox"
-                    name="hazardous"
-                    checked={hazardous}
-                    onChange={ () => setHazardous( !hazardous ) }
-                    />
-                    <label> Hazardous </label>
                 </div>
                 <div>
                     <label> Types of Goods Allowed </label>
@@ -144,6 +110,22 @@ const Create = (props) => {
                         <span className="error-text">{errs.goodsType.message}</span>
                             : null
                     }
+                </div>
+                <div>
+                    <input type="checkbox"
+                    name="isRefrigerated"
+                    checked={isRefrigerated}
+                    onChange={ () => setIsRefrigerated( !isRefrigerated ) }
+                    />
+                    <label> Refrigerated </label>
+                </div>
+                <div>
+                    <input type="checkbox"
+                    name="allowHazardous"
+                    checked={allowHazardous}
+                    onChange={ () => setAllowHazardous( !allowHazardous ) }
+                    />
+                    <label> Hazardous </label>
                 </div>
                 <div>
                     <button type="submit">Add Capacity</button>

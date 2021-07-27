@@ -3,13 +3,13 @@ import axios from 'axios';
 import { navigate } from '@reach/router';
 
 const DeleteButton = (props) => {
-    const [ capacityId, setCapacityId ] = useState (props.id);
-    const deleteCapacity = (capacityId) => {
-        axios.delete(`http://localhost:8000/api/capacity/${ capacityId }`)
+    const [ d2wLogisticsDBId, setD2wLogisticsDB ] = useState (props.id);
+    const deleteCapacity = (d2wLogisticsDBId) => {
+        axios.delete(`http://localhost:8000/api/d2wLogisticsDB/${ d2wLogisticsDBId }`)
             .then((res) => {
                 console.log(res.data);
                 // setAllCapacity(allCapacity.filter((capacityElement) => capacityElement._id !== capacityId))
-                navigate('/capacity');
+                navigate('/');
             })
             .catch((err) => {
                 console.log(err);
