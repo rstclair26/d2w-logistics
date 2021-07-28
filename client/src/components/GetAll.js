@@ -47,10 +47,22 @@ const GetAll = (props) => {
                                 <p>{d2wLogisticsDB.numFeuAvailable}</p>
                             </td>
                             <td>
-                                <p>{d2wLogisticsDB.isRefrigerated}</p>
+                                <p>
+                                    { 
+                                    d2wLogisticsDB.isRefrigerated ?
+                                    <span>Yes</span>
+                                    :<span>No</span> 
+                                    }
+                                </p>
                             </td>
                             <td>
-                                <p>{d2wLogisticsDB.allowHazardous}</p>
+                                <p>
+                                    { 
+                                    d2wLogisticsDB.allowHazardous ?
+                                    <span>Yes</span>
+                                    :<span>No</span> 
+                                    }
+                                </p>
                             </td>
                             <td>
                                 <Link to={ `/capacities/${d2wLogisticsDB._id}`}><button>Inquire</button></Link>

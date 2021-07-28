@@ -9,7 +9,7 @@ const DeleteButton = (props) => {
             .then((res) => {
                 console.log(res.data);
                 // setAllCapacity(allCapacity.filter((capacityElement) => capacityElement._id !== capacityId))
-                navigate('/');
+                navigate('/capacities');
             })
             .catch((err) => {
                 console.log(err);

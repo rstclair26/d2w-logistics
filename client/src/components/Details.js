@@ -86,7 +86,7 @@ const Details = (props) => {
                     </td>
                 </tr>
             </table>
-            <button onClick={ () => navigate("/")}>Back</button>
+            <button onClick={ () => navigate("/capacities")}>Back</button>
             <DeleteButton _id={ d2wLogisticsDB._id }/>
         </div>
     )

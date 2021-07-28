@@ -49,7 +49,7 @@ const Edit = (props) => {
                 }
                 else {
                     console.log(res.data)
-                    navigate("/capacities/" + props.id); //this takes the :id via props so after editing user is now on the details
+                    navigate("/capacities"); //this takes the :id via props so after editing user is now on the details
                 }
             })
             .catch((err) => {
@@ -145,7 +145,7 @@ const Edit = (props) => {
                 </div>
                 <div>
                     <button type="submit">Update Capacity</button>
-                    <button onClick={ () => navigate("/")}>Cancel</button>
+                    <button onClick={ () => navigate("/capacities")}>Cancel</button>
                     <DeleteButton _id={ d2wLogisticsDB._id }/>
                 </div>
             </form>
