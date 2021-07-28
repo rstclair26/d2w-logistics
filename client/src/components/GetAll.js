@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, navigate } from '@reach/router';
 import axios from 'axios';
-//import DeleteButton from './DeleteButton';
+import Logout from '../components/Logout';
+import DeleteButton from './DeleteButton';
 
 const GetAll = (props) => {
     const [ allD2wLogisticsDB, setAllD2wLogisticsDB ] = useState([]); // notes : put in an array, as there is an array of objects expected, see postman which gets back and array of objects
@@ -19,8 +20,16 @@ const GetAll = (props) => {
     }, []);
 
     return (
-        <div>
-            <table>
+    <div className="container" >
+        <header className="header">
+            <Link to="/">
+            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="200" height="200"/>
+            </Link>
+            <Logout/>
+        </header>  
+        <h1 className="main-text">Dashboard </h1>
+            <div className="box-dashboard-2">
+                <table className="table-wrapper">    
                 <thead>
                     <th>Departure Date</th>
                     <th>Departure Port</th>
@@ -35,7 +44,9 @@ const GetAll = (props) => {
                         allD2wLogisticsDB.map((d2wLogisticsDB, index) => (
                         <tr>
                             <td>
-                                <p>{d2wLogisticsDB.departureDate} </p>
+                                <p>{d2wLogisticsDB.departureDate !== "" ?
+                                        ((new Date(d2wLogisticsDB.departureDate)).toLocaleDateString("en-us"))
+                                : ""}</p>
                             </td>
                             <td>
                                 <p>{d2wLogisticsDB.departurePort}</p>
@@ -72,7 +83,9 @@ const GetAll = (props) => {
                     }
                 </tbody>
             </table>
-            <button onClick={ () => navigate("/capacities/create")}>Add Capacity</button>
+            <button  className="add-btn" onClick={ () => navigate("/capacities/create")}>Add Capacity</button>
+            </div>
+            <img src="/images/FREIGHT2.PNG"  alt="story" width="350" height="350" />
         </div>
     )
 };

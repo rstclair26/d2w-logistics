@@ -18,9 +18,10 @@ const Details = (props) => {
         }, [props.id ]);
 
     return (
-        <div>
-            <h1>Details</h1>
-            <table>
+        <div className="container">
+            <h1 className ="main-text">Details</h1>
+            <div className="box-dashboard-2">
+                <table className="table-wrapper">   
                 <tr>
                     <td>
                         Scheduled Date of Depature:
@@ -89,6 +90,7 @@ const Details = (props) => {
             <button onClick={ () => navigate("/capacities")}>Back</button>
             <button onClick={ () => navigate("/capacities/:id/edit")}>Edit</button>
             <DeleteButton _id={ d2wLogisticsDBId._id }/>
+            </div>
         </div>
     )
 };
