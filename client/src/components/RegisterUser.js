@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
-// import {motion} from 'framer-motion';
-// import { animationOne, transition} from '../animations/Animation';
+import {motion} from 'framer-motion';
+import { animationOne, transition} from '../animations/Animation';
+import { Link , navigate} from '@reach/router';
 import axios from 'axios';
 
 const RegisterUser =(props) =>{
@@ -9,15 +10,15 @@ const [confirmReg, setConfirmReg] = useState("");
 const [errs, setErrs] = useState({});
 const [ user, setUser ] = useState({
     companyName: "",
-    primaryMarket:"",
+    goodsType:"",
     firstName:"",
     lastName:"",
     email: "",
-    mobileNumber:"", 
+    mobilePhone:"", 
     password: "", 
     confirmPassword: "",
 })
-
+const primaryMarketArr = ["Automotive","Clothing Retail","Electronics","Food Production","Industrial"];
 const handleChange = (e) => {
     setUser({
     ...user,
@@ -25,7 +26,7 @@ const handleChange = (e) => {
     })
 }
 
-const register = e => {
+const register = (e)=> {
     e.preventDefault();
 
     axios.post("http://localhost:8000/api/users/register", 
@@ -38,18 +39,18 @@ const register = e => {
 
         setUser({
         companyName: "",
-        primaryMarket:"",
+        goodsType:"",
         firstName:"",
         lastName:"",
         email: "",
-        mobileNumber:"", 
+        mobilePhone:"", 
         password: "", 
         confirmPassword: "",
         })
 
         setConfirmReg("Registration complete, please log in to continue!");
         setErrs({});
-        // navigate("/");
+        navigate("/capacities");
     })
     .catch((err) => {
         console.log(err);
@@ -59,11 +60,18 @@ const register = e => {
 
 return (
     <div className="container">
-        <nav>
-                <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo"/>
-        </nav>  
+        <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
+        <header className="header">
+            <Link to="/">
+            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="200"  height="200"/>
+            </Link>
+        </header>  
         <main>
+            <div className="blob"> <img src="/images/business.png" alt="blob" width="600" height="600"/> 
+            <h1 className="main-text">Welcome to D2W Logistics</h1>
+            </div>
                 <div className="box-dashboard">
+                <img src="/images/signup.png" alt="ship-logo" width="75" height="75"/>  
                         <h1 className="big-text">Register</h1>
                 {
                     confirmReg ? 
@@ -78,26 +86,23 @@ return (
                                 <span className="error-text">{ errs.companyName.message }</span>
                                 : null
                             }
-                            <input
-                                type="text"
-                                name="companyName"
-                                value={user.companyName}
-                                onChange={(e) => handleChange(e)}
-                            />
+                            <input type="text" name="companyName" value={user.companyName} onChange={(e) => handleChange(e)}/>
                             </div>
                             <div>
                             <label className="text">Primary Market</label>
                             {
-                                errs.primaryMarket ? 
-                                <span className="error-text">{ errs.primaryMarket.message }</span>
+                                errs.goodsType ? 
+                                <span className="error-text">{ errs.goodsType.message }</span>
                                 : null
                             }
-                            <input
-                                type="text"
-                                name="primaryMarket"
-                                value={user.primaryMarket}
-                                onChange={(e) => handleChange(e)}
-                            />
+                            <select  name="goodsType" value={ user.goodsType } onChange={(e) => handleChange(e)}>
+                                                <option value=""></option>
+                                                {
+                                                    primaryMarketArr.map((market) =>(
+                                                        <option value={market} key={market}>{market}</option>
+                                                    ))
+                                                }                               
+                        </select>  
                             </div>
                             <div>
                             <label className="text">First Name</label>
@@ -106,12 +111,7 @@ return (
                                 <span className="error-text">{ errs.firstName.message }</span>
                                 : null
                             }
-                            <input
-                                type="text"
-                                name="firstName"
-                                value={user.firstName}
-                                onChange={(e) => handleChange(e)}
-                            />
+                            <input type="text"name="firstName" value={user.firstName} onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
                             <label className="text">Last Name</label>
@@ -138,21 +138,21 @@ return (
                                 type="email"
                                 name="email"
                                 value={user.email}
-                                onChange={ handleChange }
+                                onChange={ (e) => handleChange(e)}
                             />
                             </div>
                             <div>
                             <label className="text">Mobile Number</label>
                             {
-                                errs.mobileNumber? 
-                                <span className="error-text">{ errs.mobileNumber.message }</span>
+                                errs.mobilePhone? 
+                                <span className="error-text">{ errs.mobilePhone.message }</span>
                                 : null
                             }
-                            <input
-                                type="tel"
-                                name="mobileNumber"
-                                value={user.mobileNumber}
-                                onChange={ handleChange }
+                           <input
+                                type="text"
+                                name="mobilePhone"
+                                value={user.mobilePhone}
+                                onChange={(e) => handleChange(e)}
                             />
                             </div>
                             <div>
@@ -162,12 +162,7 @@ return (
                                 <span className="error-text">{ errs.password.message }</span>
                                 : null
                             }
-                            <input
-                                type="password"
-                                name="password"
-                                value={user.password}
-                                onChange={ handleChange }
-                            />
+                            <input  type="password" name="password" value={user.password} onChange={ (e) => handleChange(e)} />
                             </div>
                             <div>
                             <label className="text">Confirm Password</label>
@@ -176,21 +171,17 @@ return (
                                 <span className="error-text">{ errs.confirmPassword.message }</span>
                                 : null
                             }
-                            <input
-                                type="password"
-                                name="confirmPassword"
-                                value={user.confirmPassword}
-                                onChange={ handleChange }
+                            <input type="password" name="confirmPassword"  value={user.confirmPassword}  onChange={ (e) => handleChange(e) }
                             />
                     </div>
                     <div className="center">
-                    <button 
-                        type="submit"
-                    >Register</button>
-                    </div>
+                    <button   type="submit" >Register</button>
+                        </div>
                 </form>
             </div>
+            
         </main>
+        </motion.div>
     </div>
 );
 }

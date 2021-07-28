@@ -1,15 +1,14 @@
 import React ,{useState, useEffect} from 'react';
 import { Link } from '@reach/router';
-import {motion} from 'framer-motion';
-import { animationOne, transition} from '../animations/Animation';
 
-const Login =(props) =>{
+
+const Logout =(props) =>{
 
 
 return(
-    <div className="container">
-               <Link default> {/*   redirect to registration  */}
-                <button  type="submit" value="Log out">Log out</button>
+    <div >
+               <Link to ="/"> {/*   redirect to registration  */}
+                <button  type="submit" value="Logout">Log out</button>
                 </Link>
     </div>
     )
@@ -17,5 +16,5 @@ return(
 
 
 
-export default Login;
+export default Logout;
 
