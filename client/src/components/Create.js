@@ -103,7 +103,7 @@ const Create = (props) => {
                     <input type="text"
                     name="goodsType"
                     value={goodsType}
-                    onChange={ (e) => setgoodsType( e.target.value ) }
+                    onChange={ (e) => setGoodsType( e.target.value ) }
                     />
                     {
                         errs.type ?
