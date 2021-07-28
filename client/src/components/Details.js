@@ -87,6 +87,7 @@ const Details = (props) => {
                 </tr>
             </table>
             <button onClick={ () => navigate("/capacities")}>Back</button>
+            <button onClick={ () => navigate("/capacities/:id/edit")}>Edit</button>
             <DeleteButton _id={ d2wLogisticsDBId._id }/>
         </div>
     )

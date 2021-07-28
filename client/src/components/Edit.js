@@ -78,12 +78,20 @@ const Edit = (props) => {
                     }
                 </div>
                 <div>
-                    <label> Departure Port </label>
-                    <input type="text"
-                    name="departurePort"
-                    value={departurePort}
+                <label for = "departurePort"> Departure Port </label>
+                    <select name="departurePort" id="departurePort">
+                        <option value="CAVAN">CAVAN</option>
+                        <option value="CNSGH">CNSGH</option>
+                        <option value="DEHAM">DEHAM</option>
+                        <option value="CAVAN">CAVAN</option>
+                        <option value="INBOM">INBOM</option>
+                        <option value="JPTYO">JPTYO</option>
+                        <option value="NKHKG">NKHKG</option>
+                        <option value="NLRTM">NLRTM</option>
+                        <option value="USLAX">USLAX</option>
+                        <option value="USNYC">USNYC</option>
                     onChange={ (e) => setDeparturePort( e.target.value ) }
-                    />
+                    </select>
                     {
                         errs.departurePort ?
                         <span className="error-text">{errs.departurePort.message}</span>
@@ -91,12 +99,20 @@ const Edit = (props) => {
                     }
                 </div>
                 <div>
-                    <label> Destination Port </label>
-                    <input type="text"
-                    name="destinationPort"
-                    value={destinationPort}
+                    <label for = "destinationPort"> Destination Port </label>
+                    <select name="destinationPort" id="destinationPort">
+                        <option value="CAVAN">CAVAN</option>
+                        <option value="CNSGH">CNSGH</option>
+                        <option value="DEHAM">DEHAM</option>
+                        <option value="CAVAN">CAVAN</option>
+                        <option value="INBOM">INBOM</option>
+                        <option value="JPTYO">JPTYO</option>
+                        <option value="NKHKG">NKHKG</option>
+                        <option value="NLRTM">NLRTM</option>
+                        <option value="USLAX">USLAX</option>
+                        <option value="USNYC">USNYC</option>
                     onChange={ (e) => setDestinationPort( e.target.value ) }
-                    />
+                    </select>
                     {
                         errs.destinationPort ?
                         <span className="error-text">{errs.destinationPort.message}</span>
@@ -118,12 +134,15 @@ const Edit = (props) => {
                     }
                 </div>
                 <div>
-                    <label> Types of Goods Allowed </label>
-                    <input type="text"
-                    name="goodsType"
-                    value={goodsType}
+                <label for = "goodsType"> Change Goods Allowed </label>
+                <select name="goodsType" id="goodsType">
+                    <option value="Automotive">Automotive</option>
+                    <option value="Clothing Retail">Clothing Retail</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Food Production">Food Production</option>
+                    <option value="Industrial">Industrial</option>
                     onChange={ (e) => setGoodsType( e.target.value ) }
-                    />
+                </select>
                     {
                         errs.goodsType ?
                         <span className="error-text">{errs.goodsType.message}</span>
@@ -147,7 +166,7 @@ const Edit = (props) => {
                     <label> Hazardous </label>
                 </div>
                 <div>
-                    <button type="submit">Update Capacity</button>
+                    <button type="submit">Update</button>
                     <button onClick={ () => navigate("/capacities")}>Cancel</button>
                     <DeleteButton _id={ d2wLogisticsDBId }/>
                 </div>
