@@ -16,7 +16,7 @@ const Create = (props) => {
     const submitHandler = (e) => {
         e.preventDefault(); //bring in the event with 'e' and prevent default refresh of capacity
 
-        axios.put("http://localhost:8000/api/d2wLogisticsDB/" + props.id, {
+        axios.post("http://localhost:8000/api/capacities" , { 
             departureDate: departureDate,
             departurePort: departurePort,
             destinationPort: destinationPort,
@@ -33,7 +33,7 @@ const Create = (props) => {
                 }
                 else {
                     console.log(res.data)
-                    navigate("/d2wLogisticsDB/" + props.id); //this takes the :id via props so after editing user is now on the details
+                    navigate("/capacities"); //this takes the :id via props so after editing user is now on the details
                 }
             })
             .catch((err) => {
@@ -103,7 +103,7 @@ const Create = (props) => {
                     <input type="text"
                     name="goodsType"
                     value={goodsType}
-                    onChange={ (e) => setgoodsType( e.target.value ) }
+                    onChange={ (e) => setGoodsType( e.target.value ) }
                     />
                     {
                         errs.type ?
@@ -129,7 +129,7 @@ const Create = (props) => {
                 </div>
                 <div>
                     <button type="submit">Add Capacity</button>
-                    <button onClick={ () => navigate("/")}>Cancel</button>
+                    <button onClick={ () => navigate("/capacities")}>Cancel</button>
                 </div>
             </form>
         </div>
