@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, navigate } from '@reach/router';
 import axios from 'axios';
+import DeleteButton from './DeleteButton';
 
 const Edit = (props) => {
     const [ departureDate, setDepartureDate ] = useState("");
@@ -10,6 +11,7 @@ const Edit = (props) => {
     const [ isRefrigerated, setIsRefrigerated ] = useState("");
     const [ allowHazardous, setAllowHazardous ] = useState("");
     const [ goodsType, setGoodsType ] = useState("");
+    const [ d2wLogisticsDBId, setD2wLogisticsDBId ] = useState("");
     const [ errs, setErrs ] = useState({});
 
     useEffect(() => {
@@ -17,6 +19,7 @@ const Edit = (props) => {
             .then((res) => {
                 console.log(res.data); 
                 let d2wLogisticsDB = res.data;
+                setD2wLogisticsDBId(d2wLogisticsDB._id);
                 setDepartureDate(d2wLogisticsDB.departureDate);
                 setDeparturePort(d2wLogisticsDB.departurePort);
                 setDestinationPort(d2wLogisticsDB.destinationPort);
@@ -146,7 +149,7 @@ const Edit = (props) => {
                 <div>
                     <button type="submit">Update Capacity</button>
                     <button onClick={ () => navigate("/capacities")}>Cancel</button>
-                    <DeleteButton _id={ d2wLogisticsDB._id }/>
+                    <DeleteButton _id={ d2wLogisticsDBId }/>
                 </div>
             </form>
         </div>

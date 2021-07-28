@@ -1,0 +1,114 @@
+*{
+	padding: 0px;
+    margin: 0px auto;
+    font-family: sans-serif;
+    color: snow;
+}
+.wrapper {
+	width: 975px;
+    margin: auto;
+    background-color: #1f1e1d;
+}
+.header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    }
+.header img{
+    width: 20%;
+    padding-right: 50%;
+}
+.header h5{
+    margin: 10px 20px;
+}
+.nav{
+    text-decoration: none;
+    width: 950px;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    margin: 25px 10px 0px 0px;
+    padding: 12px;
+    background: linear-gradient(#4e4d4b, #1f1e1d)
+}
+.nav a{
+    text-decoration: none;
+    color: rgb(202, 202, 202);
+}
+.features{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #242322;
+}
+.features img{
+    height: 10%;
+    margin: 15px 0px 20px 5px;
+}
+.feature h4{
+    color: orange;
+    margin: 20px 10px 0px 10px;
+}
+.feature p{
+    font-size: 12px;
+    margin: 0px 10px 20px 10px;
+}
+.buy-now{
+    display: flex;
+    margin: 20px;
+}
+.buy-now-left h3{
+    width: 600px;
+    margin: 10px 10px 10px 0px;
+}
+.buy-now-left p{
+    font-size: 12px;
+    width: 600px;
+    margin: 10px 10px 10px 0px;
+}
+.buy-now button{
+    background: orange;
+    text-align: center;
+    padding: 0px 25px 0px 25px;
+    border-radius: 5px;
+    margin: 20px 10px 20px 10px;
+}
+.portfolio-header{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#4e4d4b, #1f1e1d)
+}
+.portfolio-header h4{
+    margin: 20px 10px 10px 30px;
+}
+.portfolio-header a{
+    color: orange;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 12px;
+    margin: 20px 20px 10px 10px;
+}
+.portfolio{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 100px 20px;
+}
+.portfolio h5{
+    color: orange;
+    margin: 10px 10px 10px 0px;
+}
+.portfolio p{
+    font-size: 12px;
+    width: 215px;
+}
+.portfolio-detail img {
+    border: 3px solid #616060;
+}
+.footer a{
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    font-size: 10px;
+    color: grey;
+    margin: 10px 20px 10px 0px;
+}

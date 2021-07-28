@@ -1,6 +1,6 @@
 import React ,{useState, useEffect} from 'react';
 import { Link } from '@reach/router';
-import {motion} from 'framer-motion';
+// import {motion} from 'framer-motion';
 import axios from 'axios';
 import { animationOne, transition} from '../animations/Animation';
 
@@ -41,7 +41,6 @@ return (
             <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo"/>
         </nav>  
         <main>
-            <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
                 <div className="box-dashboard">       
                     <h1 className="big-text">Sign In</h1>
                     <p className="error-text">{errorMessage ? errorMessage : ""}</p>
@@ -71,7 +70,6 @@ return (
                         <button  type="submit" value="New Registration">New Registration </button>
                     </Link>
                     </div>
-            </motion.div>
         </main>
     </div>
 );

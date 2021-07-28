@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
-import {motion} from 'framer-motion';
-import { animationOne, transition} from '../animations/Animation';
+// import {motion} from 'framer-motion';
+// import { animationOne, transition} from '../animations/Animation';
 import axios from 'axios';
 
 const RegisterUser =(props) =>{
@@ -63,7 +63,6 @@ return (
                 <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo"/>
         </nav>  
         <main>
-            <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
                 <div className="box-dashboard">
                         <h1 className="big-text">Register</h1>
                 {
@@ -191,7 +190,6 @@ return (
                     </div>
                 </form>
             </div>
-            </motion.div>
         </main>
     </div>
 );
