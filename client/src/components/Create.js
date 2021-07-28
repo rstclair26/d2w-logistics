@@ -53,7 +53,7 @@ const Create = (props) => {
                     onChange={ (e) => setDepartureDate( e.target.value ) }
                     />
                     {
-                        errs.name ?
+                        errs.departureDate ?
                             <span className="error-text">{errs.departureDate.message}</span>
                             : null
                     }
@@ -66,7 +66,7 @@ const Create = (props) => {
                     onChange={ (e) => setDeparturePort( e.target.value ) }
                     />
                     {
-                        errs.type ?
+                        errs.departurePort ?
                         <span className="error-text">{errs.departurePort.message}</span>
                             : null
                     }
@@ -79,7 +79,7 @@ const Create = (props) => {
                     onChange={ (e) => setDestinationPort( e.target.value ) }
                     />
                     {
-                        errs.type ?
+                        errs.destinationPort ?
                         <span className="error-text">{errs.destinationPort.message}</span>
                             : null
                     }
@@ -93,7 +93,7 @@ const Create = (props) => {
                     onChange={ (e) => setNumFeuAvailable( e.target.value ) }
                     />
                     {
-                        errs.skills ?
+                        errs.numFeuAvailable ?
                         <span className="error-text">{errs.numFeuAvailable.message}</span>
                             : null
                     }
@@ -106,7 +106,7 @@ const Create = (props) => {
                     onChange={ (e) => setGoodsType( e.target.value ) }
                     />
                     {
-                        errs.type ?
+                        errs.goodsType ?
                         <span className="error-text">{errs.goodsType.message}</span>
                             : null
                     }

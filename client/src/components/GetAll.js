@@ -72,6 +72,7 @@ const GetAll = (props) => {
                     }
                 </tbody>
             </table>
+            <button onClick={ () => navigate("/capacities/create")}>Add Capacity</button>
         </div>
     )
 };

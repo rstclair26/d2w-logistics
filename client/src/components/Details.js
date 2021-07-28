@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-//import { Link, navigate } from '@reach/router';
+import { navigate } from '@reach/router';
 import axios from 'axios';
 import DeleteButton from './DeleteButton';
 
@@ -26,7 +26,7 @@ const Details = (props) => {
                         Scheduled Date of Depature:
                     </td>
                     <td>
-                        { d2wLogisticsDB.departureDate }
+                        { d2wLogisticsDBId.departureDate }
                     </td>
                 </tr>
                 <tr>
@@ -34,7 +34,7 @@ const Details = (props) => {
                         Port of Departure:
                     </td>
                     <td>
-                        { d2wLogisticsDB.departurePort }
+                        { d2wLogisticsDBId.departurePort }
                     </td>
                 </tr>
                 <tr>
@@ -42,7 +42,7 @@ const Details = (props) => {
                         Destination Port:
                     </td>
                     <td>
-                        { d2wLogisticsDB.destinationPort }
+                        { d2wLogisticsDBId.destinationPort }
                     </td>
                 </tr>
                 <tr>
@@ -50,7 +50,7 @@ const Details = (props) => {
                         Number of FEUs:
                     </td>
                     <td>
-                        { d2wLogisticsDB.numFeuAvailable }
+                        { d2wLogisticsDBId.numFeuAvailable }
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +58,7 @@ const Details = (props) => {
                         Type of Goods Allowed:
                     </td>
                     <td>
-                        { d2wLogisticsDB.goodsType }
+                        { d2wLogisticsDBId.goodsType }
                     </td>
                     </tr>
                 <tr>
@@ -67,7 +67,7 @@ const Details = (props) => {
                     </td>
                     <td>
                         { 
-                        d2wLogisticsDB.isRefrigerated ?
+                        d2wLogisticsDBId.isRefrigerated ?
                         <span>Yes</span>
                         :<span>No</span> 
                         }
@@ -79,7 +79,7 @@ const Details = (props) => {
                     </td>
                     <td>
                         { 
-                        d2wLogisticsDB.allowHazardous ?
+                        d2wLogisticsDBId.allowHazardous ?
                         <span>Yes</span>
                         :<span>No</span> 
                         }
@@ -87,7 +87,7 @@ const Details = (props) => {
                 </tr>
             </table>
             <button onClick={ () => navigate("/capacities")}>Back</button>
-            <DeleteButton _id={ d2wLogisticsDB._id }/>
+            <DeleteButton _id={ d2wLogisticsDBId._id }/>
         </div>
     )
 };
