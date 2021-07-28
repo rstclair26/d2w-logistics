@@ -3,6 +3,8 @@ import { Link } from '@reach/router';
 // import {motion} from 'framer-motion';
 import axios from 'axios';
 import { animationOne, transition} from '../animations/Animation';
+import { navigate } from '@reach/router';
+
 
 const Login =(props) =>{
 
@@ -27,7 +29,7 @@ const Login =(props) =>{
             console.log(res.cookie);
             console.log(res);
             console.log(res.data);
-            // navigate("/");
+            navigate("/capacities");
         })
         .catch((err) => {
             console.log(err.response);
@@ -66,7 +68,7 @@ return (
                         <button type="submit">Login</button>
                         <hr/>            
                     </form>
-                    <Link to="/signup"> {/*   redirect to registration  */}
+                    <Link to="/signup">
                         <button  type="submit" value="New Registration">New Registration </button>
                     </Link>
                     </div>

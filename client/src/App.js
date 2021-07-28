@@ -6,7 +6,7 @@ import GetAll from './components/GetAll';
 import Create from './components/Create';
 import Edit from './components/Edit';
 import Details from './components/Details';
-import { Router } from '@reach/router'; // since router is not exported as default {} are required
+import { Router } from '@reach/router';
 
 function App() {
 

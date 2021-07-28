@@ -2,6 +2,7 @@ import React ,{useState} from 'react';
 // import {motion} from 'framer-motion';
 // import { animationOne, transition} from '../animations/Animation';
 import axios from 'axios';
+import { navigate } from '@reach/router';
 
 const RegisterUser =(props) =>{
 
@@ -49,7 +50,7 @@ const register = e => {
 
         setConfirmReg("Registration complete, please log in to continue!");
         setErrs({});
-        // navigate("/");
+        navigate("/capacities");
     })
     .catch((err) => {
         console.log(err);
