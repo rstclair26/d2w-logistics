@@ -80,7 +80,6 @@ const Edit = (props) => {
                 <div>
                 <label for = "departurePort"> Departure Port </label>
                     <select name="departurePort" id="departurePort">
-                        <option value="CAVAN">CAVAN</option>
                         <option value="CNSGH">CNSGH</option>
                         <option value="DEHAM">DEHAM</option>
                         <option value="CAVAN">CAVAN</option>
@@ -101,7 +100,6 @@ const Edit = (props) => {
                 <div>
                     <label for = "destinationPort"> Destination Port </label>
                     <select name="destinationPort" id="destinationPort">
-                        <option value="CAVAN">CAVAN</option>
                         <option value="CNSGH">CNSGH</option>
                         <option value="DEHAM">DEHAM</option>
                         <option value="CAVAN">CAVAN</option>

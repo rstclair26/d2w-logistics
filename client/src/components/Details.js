@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { navigate } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import axios from 'axios';
 import DeleteButton from './DeleteButton';
 
@@ -87,7 +87,7 @@ const Details = (props) => {
                 </tr>
             </table>
             <button onClick={ () => navigate("/capacities")}>Back</button>
-            <button onClick={ () => navigate("/capacities/:id/edit")}>Edit</button>
+            <Link to={ `/capacities/${d2wLogisticsDBId._id}/edit`}><button>Edit</button></Link>
             <DeleteButton _id={ d2wLogisticsDBId._id }/>
         </div>
     )
@@ -95,6 +95,8 @@ const Details = (props) => {
 
 export default Details;
 
+
+//<button onClick={ () => navigate("/capacities/${d2wLogisticsDB._id}/edit")}>Edit</button>
 // additional, optional fields
 // <tr>
 //<td>
