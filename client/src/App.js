@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Down To The Wire Logistics</h1>
       <Router>
         <Login default/>
         <RegisterUser path="/signup"/>
