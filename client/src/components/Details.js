@@ -27,7 +27,9 @@ const Details = (props) => {
                         Scheduled Date of Depature:
                     </td>
                     <td>
-                        { d2wLogisticsDBId.departureDate }
+                                <p>{d2wLogisticsDBId.departureDate !== "" ?
+                                        ((new Date(d2wLogisticsDBId.departureDate)).toLocaleDateString("en-us"))
+                                : ""}</p>
                     </td>
                 </tr>
                 <tr>
@@ -87,9 +89,11 @@ const Details = (props) => {
                     </td>
                 </tr>
             </table>
-            <button onClick={ () => navigate("/capacities")}>Back</button>
-            <button onClick={ () => navigate("/capacities/:id/edit")}>Edit</button>
-            <DeleteButton _id={ d2wLogisticsDBId._id }/>
+                <div className="btn-div">
+                    <button onClick={ () => navigate("/capacities")}>Back</button>
+                    <button onClick={ () => navigate("/capacities/"+ d2wLogisticsDBId._id+"/edit")}>Edit</button>
+                    <DeleteButton _id={ d2wLogisticsDBId._id }/>
+                </div>
             </div>
         </div>
     )
