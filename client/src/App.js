@@ -17,10 +17,10 @@ function App() {
       <Router>
         <Login default/>
         <RegisterUser path="/signup"/>
-        <GetAll path="/" />
-        <Create path="/d2wLogisticsDBId/create" />
-        <Edit path="/d2wLogisticsDBId/:id/edit" />
-        <Details path="/d2wLogisticsDBId/:id"/> 
+        <GetAll path="/capacities" />
+        <Create path="/capacities/create" />
+        <Edit path="/capacities/:id/edit" />
+        <Details path="/capacities/:id"/> 
       </Router>
     </div>
   );

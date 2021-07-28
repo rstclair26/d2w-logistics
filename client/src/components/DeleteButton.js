@@ -5,11 +5,11 @@ import { navigate } from '@reach/router';
 const DeleteButton = (props) => {
     const [ d2wLogisticsDBId, setD2wLogisticsDB ] = useState (props.id);
     const deleteCapacity = (d2wLogisticsDBId) => {
-        axios.delete(`http://localhost:8000/api/d2wLogisticsDB/${ d2wLogisticsDBId }`)
+        axios.delete(`http://localhost:8000/api/capacities/${ d2wLogisticsDBId }`)
             .then((res) => {
                 console.log(res.data);
                 // setAllCapacity(allCapacity.filter((capacityElement) => capacityElement._id !== capacityId))
-                navigate('/');
+                navigate('/capacities');
             })
             .catch((err) => {
                 console.log(err);
