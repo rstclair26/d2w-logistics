@@ -7,7 +7,7 @@ const GetAll = (props) => {
     const [ allD2wLogisticsDB, setAllD2wLogisticsDB ] = useState([]); // notes : put in an array, as there is an array of objects expected, see postman which gets back and array of objects
     
     useEffect(() => {
-        axios.get("http://localhost:8000/api/d2wLogisticsDB") //notes: use the same string that works for a 'get' in postman
+        axios.get("http://localhost:8000/api/capacities") //notes: use the same string that works for a 'get' in postman
             .then((res) => {
                 console.log(res.data); //this is just checking that the data returned correctly in the console
                 //need state to hold onto the capacity instance data we just called, do this above with const all
@@ -53,7 +53,7 @@ const GetAll = (props) => {
                                 <p>{d2wLogisticsDB.allowHazardous}</p>
                             </td>
                             <td>
-                                <Link to={ `/capacity/${d2wLogisticsDB._id}/details`}><button>Inquire</button></Link>
+                                <Link to={ `/capacities/${d2wLogisticsDB._id}`}><button>Inquire</button></Link>
                             </td>
                         </tr>
                         ))

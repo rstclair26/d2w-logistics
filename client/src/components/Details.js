@@ -7,7 +7,7 @@ const Details = (props) => {
     const [ d2wLogisticsDBId, setD2wLogisticsDBId ] = useState({});
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/d2wLogisticsDB/' + props.id) // postman verified url
+        axios.get('http://localhost:8000/api/capacities/' + props.id) // postman verified url
             .then((res) => {
                 console.log(res.data); //.then gives response object which is commonly referred to as res
                 setD2wLogisticsDBId(res.data);
@@ -42,7 +42,7 @@ const Details = (props) => {
                         Destination Port:
                     </td>
                     <td>
-                        { capacity.destinationPort }
+                        { d2wLogisticsDB.destinationPort }
                     </td>
                 </tr>
                 <tr>
