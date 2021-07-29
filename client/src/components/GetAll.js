@@ -27,9 +27,9 @@ const GetAll = (props) => {
             <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="200" height="200"/>
             <Logout/>
         </header>  
-        
             <div className="box-dashboard-2">
-            <h1 className="main-text">Up-To-The-Minute Availabilities </h1>
+            <h1 className="getall-main-text">Up-To-The-Minute Availabilities </h1>
+            <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="add-btn" onClick={ () => navigate("/capacities/create")}>Offer Capacity</motion.button> 
                 <table className="table-wrapper">    
                 <thead>
                     <th>Departure Date</th>
@@ -66,7 +66,7 @@ const GetAll = (props) => {
                                     { 
                                     d2wLogisticsDB.isRefrigerated ?
                                     <span><img src="images/winter (1).png" alt="refrig" width="50" height="50"/></span>
-                                    :<span>No</span> 
+                                    :<span><img src="images/no.png" alt="refrig" width="50" height="50"/></span> 
                                     }
                                 </p>
                             </td>
@@ -75,7 +75,7 @@ const GetAll = (props) => {
                                     { 
                                     d2wLogisticsDB.allowHazardous ?
                                     <span><img src="images/caution.png" alt="refrig" width="50" height="50"/></span>
-                                    :<span>No</span> 
+                                    :<span><img src="images/no.png" alt="refrig" width="50" height="50"/></span> 
                                     }
                                 </p>
                             </td>
@@ -87,10 +87,10 @@ const GetAll = (props) => {
                     }
                 </tbody>
             </table>
-            
-            <img src="/images/freight2.svg"  alt="story" width="350" height="350" />
-            <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="add-btn" onClick={ () => navigate("/capacities/create")}>Offer Capacity</motion.button> 
-            
+            <div className="image-centered">
+                        <img src="/images/freight2.svg"  alt="story" width="350" height="350" />
+
+            </div>        
             </div>
            
             </motion.div>

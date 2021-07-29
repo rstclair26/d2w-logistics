@@ -33,7 +33,8 @@ const Edit = (props) => {
     "USNYC"];
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/capacities/' + props.id) // need to use postman to verify url
+            window.scrollTo(0, 0);
+          axios.get('http://localhost:8000/api/capacities/' + props.id) // need to use postman to verify url
             .then((res) => {
                 console.log(res.data); 
                 let d2wLogisticsDB = res.data;
@@ -87,7 +88,6 @@ const Edit = (props) => {
         </header>
         <div className="box-dashboard-3">  
         <div className="wrapper">
-        
         <div className="text-wrapper">  
             <h1 className="main-text-details">Edit Capacity</h1> 
             <form onSubmit={submitHandler}>
@@ -98,7 +98,6 @@ const Edit = (props) => {
                     value={departureDate.substr(0,10) }
                     onChange={ (e) => setDepartureDate( e.target.value ) }
                     />
-                   
             </div>
             {
                         errs.departureDate ?
