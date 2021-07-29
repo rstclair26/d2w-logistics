@@ -6,6 +6,8 @@ import GetAll from './components/GetAll';
 import Create from './components/Create';
 import Edit from './components/Edit';
 import Details from './components/Details';
+import Confirmation from './views/Confirmation';
+
 import { Router } from '@reach/router'; // since router is not exported as default {} are required
 
 function App() {
@@ -14,12 +16,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Login default/>
+        <Login path="/"/>
         <RegisterUser path="/signup"/>
         <GetAll path="/capacities" />
         <Create path="/capacities/create" />
         <Edit path="/capacities/:id/edit" />
         <Details path="/capacities/:id"/> 
+        <Confirmation path="/success"/>
       </Router>
     </div>
   );

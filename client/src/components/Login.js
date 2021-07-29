@@ -1,6 +1,6 @@
 import React ,{useState, useEffect} from 'react';
-import { Link } from '@reach/router';
-// import {motion} from 'framer-motion';
+import { Link , navigate} from '@reach/router';
+import {motion} from 'framer-motion';
 import axios from 'axios';
 import { animationOne, transition} from '../animations/Animation';
 
@@ -27,7 +27,7 @@ const Login =(props) =>{
             console.log(res.cookie);
             console.log(res);
             console.log(res.data);
-            // navigate("/");
+            navigate("/capacities");
         })
         .catch((err) => {
             console.log(err.response);
@@ -37,12 +37,19 @@ const Login =(props) =>{
 
 return (
     <div className="container">
-        <nav>
-            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo"/>
-        </nav>  
+        <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
+        <header className="header">
+            <Link to="/">
+            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="300"  height="300"/>
+            </Link>
+        </header> 
         <main>
+            <div className="blob"> <img src="/images/business.png" alt="blob" width="600" height="600"/> 
+            <h1 className="main-text">Welcome to D2W Logistics</h1>
+        </div>
                 <div className="box-dashboard">       
-                    <h1 className="big-text">Sign In</h1>
+                <img src="/images/ship.png" alt="ship-logo" width="75" height="75"/>                    
+                <h1 className="big-text">Sign In</h1>
                     <p className="error-text">{errorMessage ? errorMessage : ""}</p>
                     <form onSubmit={login}>
                         <div>
@@ -70,7 +77,9 @@ return (
                         <button  type="submit" value="New Registration">New Registration </button>
                     </Link>
                     </div>
+        
         </main>
+        </motion.div>
     </div>
 );
 }
