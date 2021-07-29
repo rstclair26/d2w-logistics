@@ -80,7 +80,6 @@
   -webkit-backdrop-filter: blur( 16.0px );
   border-radius: 20px;
   padding: 20px;
-  border: ridge  black 10px;
 }
 .confirmation{
   display:flex;
@@ -109,7 +108,7 @@
   min-width:70ch;
   min-height:90vh;
   background-size: cover;
- background-color: #6D8EA0;
+  background-image: url("./images/freight-bg3.jpg") ;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0 10px 25px 3px rgba( 31, 38, 135, 0.37 );
@@ -117,7 +116,10 @@
   -webkit-backdrop-filter: blur( 16.0px );
   border-radius: 20px;
   padding: 20px;
+  border: ridge  black 10px;
 }
+
+
 .box-dashboard-3{
   display:flex;
   justify-content:center;
@@ -319,6 +321,16 @@ input:hover{
   text-shadow: 1px 4px 2px  #000;
 }
 
+
+.text2{
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: left;
+  font-weight: 700;
+}
 
 .text2{
   color: white;

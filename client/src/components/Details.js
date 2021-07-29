@@ -28,7 +28,7 @@ const Details = (props) => {
             <Logout/>
         </header>
             <div className="box-dashboard-3">
-                <div className="wrapper">
+                <div className="wrapper2">
                     <div className="text-wrapper">
                     <h1 className ="main-text-details">Details</h1>
                         <div className="flex-start2" >
