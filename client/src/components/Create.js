@@ -65,7 +65,7 @@ const Create = (props) => {
     return (
         <div className="container">
                 <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
-         <header className="header">
+                <header className="header">
                 <img className="d2w-logo"src="/images/D2W.PNG"  alt="d2w-logo" width="300" height="150"/>
             <Logout/>
         </header>
@@ -80,8 +80,7 @@ const Create = (props) => {
                     name="departureDate"
                     value={departureDate}
                     onChange={ (e) => setDepartureDate( e.target.value ) }
-                    />
-                  
+                    />       
                 </div>
                 {
                         errs.departureDate ?

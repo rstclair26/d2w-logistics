@@ -192,7 +192,7 @@ const Edit = (props) => {
                     <motion.button onClick={ () => navigate("/capacities")}>Cancel</motion.button>
                     <DeleteButton _id={ d2wLogisticsDBId }/>
                 </div>
-                <img src="/images/FREIGHT3.png"  alt="story" width="350" height="350" />
+                <img src="/images/FREIGHT4.png"  alt="story" width="350" height="350" />
             </form>
             </div>
         </div>

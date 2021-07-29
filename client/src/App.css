@@ -71,6 +71,7 @@
   align-items:center;
   justify-content: flex-start;
   min-width:70ch;
+  height:100%;
   background-size: cover;
   background-image: url("./images/freight-bg.jpg") ;
   background-repeat: no-repeat;
@@ -106,7 +107,7 @@
   align-items:center;
   justify-content: flex-start;
   min-width:70ch;
-  min-height:90vh;
+height:100%;
   background-size: cover;
   background-image: url("./images/freight-bg3.jpg") ;
   background-repeat: no-repeat;
@@ -126,7 +127,7 @@
   flex-direction: column;
   align-items:center;
   width:100%;
-  height: 110vh;
+  height:100%;
   backdrop-filter: blur( 16.0px );
   -webkit-backdrop-filter: blur( 16.0px );
   border-radius: 5px;
