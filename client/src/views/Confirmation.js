@@ -11,6 +11,8 @@ const Confirmation = (props) => {
     const [ capacity, setCapacity ] = useState({});
     const [ userCookie, setUserCookie ] = useState(JSON.parse(Cookies.get("user")));
 
+    window.scrollTo(0, 0);
+
     useEffect(() => {
         axios.get('http://localhost:8000/api/capacities/' + props.id) // postman verified url
             .then((res) => {
@@ -40,10 +42,10 @@ const Confirmation = (props) => {
 
 
     return(
-        <div className="container`">
+        <div className="container">
         <header className="header">
             <Link to="/">
-            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="300" height="300"/>
+            <img className="d2w-logo" src="/images/D2W.PNG" alt="d2w-logo" width="300" height="300"/>
             </Link>
             <Logout/>
         </header>  
