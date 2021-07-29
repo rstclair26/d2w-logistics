@@ -1,7 +1,8 @@
 import React from 'react';
 import Logout from '../components/Logout'
-import {Link} from '@reach/router';
-
+import {Link, navigate} from '@reach/router';
+import {motion } from 'framer-motion';
+import { animationOne, transition} from '../animations/Animation';
 
 const Confirmation = ( )=>{
 
@@ -13,12 +14,19 @@ const Confirmation = ( )=>{
             </Link>
             <Logout/>
         </header>  
-            <div className="confirmation-dashboard">
-            <img src="/images/available.png" alt="confirmed" width="100" height="100"/>
-            <h1>Confirmation</h1>
-            <h2>Thank you!</h2>
-            <p>Inquiry was successfully confirmed </p>
-            <p>you will received an confirmation message to email: </p>
+        <div className="box-dashboard-3">  
+            <div className="confirmation">  
+            <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>  
+                <img src="/images/available.png" alt="confirmed" width="100" height="100"/>
+                        <div className="text-wrapper">  
+                        <h1 className="">Confirmation</h1>
+                        <h2  className="">Thank you!</h2>
+                        <p  className="">Inquiry was successfully confirmed </p>
+                 
+                        </div>
+                        <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} onClick={ () => navigate("/capacities")}>Back</motion.button>
+                        </motion.div>
+                </div>
             </div>
         </div>
     )

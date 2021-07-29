@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { navigate } from '@reach/router';
+import React ,{useState} from 'react';
+import {navigate} from '@reach/router';
+import {motion} from 'framer-motion';
 import axios from 'axios';
-import Logout from '../components/Logout'
-import {motion } from 'framer-motion';
+import { animationOne, transition} from '../animations/Animation';
+
+import Logout from './Logout';
 
 const Create = (props) => {
 
@@ -60,12 +62,13 @@ const Create = (props) => {
 
     return (
         <div className="container">
-        <header className="header">
+                <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
+         <header className="header">
                 <img className="d2w-logo"src="/images/D2W.PNG"  alt="d2w-logo" width="300" height="150"/>
             <Logout/>
         </header>
         <div className="box-dashboard-3">  
-            <div className="wrapper">  
+            <div className="wrapper2">  
                     <div className="text-wrapper">  
             <h1 className="main-text-details">New Capacity</h1> 
             <form onSubmit={submitHandler}>
@@ -174,6 +177,7 @@ const Create = (props) => {
             </div>
             </div>
             </div>
+            </motion.div>
         </div>
     )
 };
