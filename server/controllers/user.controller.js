@@ -42,6 +42,15 @@ module.exports.login = (req, res) => {
                                     httpOnly: true,
                                     expires: new Date(Date.now() + 86400000)
                                 })
+                                .cookie("user", JSON.stringify({
+                                    _id: user._id,
+                                    email: user.email,
+                                    firstName: user.firstName,
+                                    lastName: user.lastName
+                                }),
+                                {
+                                    expires: new Date(Date.now() + 86400000)
+                                })
                                 .json({
                                     message: "Successfully logged in",
                                     userLoggedIn: {
