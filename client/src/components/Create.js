@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Link, navigate } from '@reach/router';
+import React ,{useState} from 'react';
+import {navigate} from '@reach/router';
+import {motion} from 'framer-motion';
 import axios from 'axios';
-import Logout from '../components/Logout'
+import { animationOne, transition} from '../animations/Animation';
+
+import Logout from './Logout';
 
 const Create = (props) => {
 
@@ -59,30 +62,32 @@ const Create = (props) => {
 
     return (
         <div className="container">
-        <header className="header">
-            <Link to="/">
+                <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
+         <header className="header">
                 <img className="d2w-logo"src="/images/D2W.PNG"  alt="d2w-logo" width="300" height="150"/>
-            </Link>
             <Logout/>
         </header>
-        <div className="box-dashboard">  
-            <h1 className="big-text">New Capacity</h1> 
+        <div className="box-dashboard-3">  
+            <div className="wrapper2">  
+                    <div className="text-wrapper">  
+            <h1 className="main-text-details">New Capacity</h1> 
             <form onSubmit={submitHandler}>
-                <div>
-                    <label className="text"> Departure Date </label>
+                <div className="flex-start">
+                    <label className="text2"> Departure Date </label>
                     <input type="date"
                     name="departureDate"
                     value={departureDate}
                     onChange={ (e) => setDepartureDate( e.target.value ) }
                     />
-                    {
+                  
+                </div>
+                {
                         errs.departureDate ?
                             <span className="error-text">{errs.departureDate.message}</span>
                             : null
                     }
-                </div>
-                <div>
-                <label className="text"> Departure Port </label>
+                <div className="flex-start">
+                <label className="text2"> Departure Port </label>
                     <select  name="departurePort" value={ departurePort }  onChange={ (e) => setDeparturePort( e.target.value ) }>
                                                 <option value=""></option>
                                                 {
@@ -91,14 +96,15 @@ const Create = (props) => {
                                                     ))
                                                 }                               
                         </select>  
-                    {
+                 
+                </div>
+                {
                         errs.departurePort ?
                         <span className="error-text">{errs.departurePort.message}</span>
                             : null
                     }
-                </div>
-                <div>
-                <label className="text"> Destination Port </label>
+                <div className="flex-start">
+                <label className="text2"> Destination Port </label>
                     <select  name="destinationPort" value={ destinationPort }  onChange={ (e) => setDestinationPort( e.target.value ) }>
                                                 <option value=""></option>
                                                 {
@@ -107,28 +113,30 @@ const Create = (props) => {
                                                     ))
                                                 }                               
                         </select>  
-                    {
+                  
+                </div>
+                {
                         errs.destinationPort ?
                         <span className="error-text">{errs.destinationPort.message}</span>
                             : null
                     }
-                </div>
-                <div>
-                <label className="text"> Number of FEUs </label>
+                <div className="flex-start">
+                <label className="text2"> Number of FEUs </label>
                     <input type="number"
                     name="numFeuAvailable"
                     min="0"
                     value={numFeuAvailable}
                     onChange={ (e) => setNumFeuAvailable( e.target.value ) }
                     />
-                    {
+                   
+                </div>
+                {
                         errs.numFeuAvailable ?
                         <span className="error-text">{errs.numFeuAvailable.message}</span>
                             : null
                     }
-                </div>
-                <div>
-                <label className="text"> Choose Goods Allowed </label>
+                <div className="flex-start">
+                <label className="text2"> Content Classification </label>
                 <select  name="goodsType" value={ goodsType } onChange={(e) => setGoodsType(e.target.value)}>
                                                 <option value=""></option>
                                                 {
@@ -137,35 +145,39 @@ const Create = (props) => {
                                                     ))
                                                 }                               
                         </select>  
-                    {
+                   
+                </div>
+                {
                         errs.goodsType ?
                         <span className="error-text">{errs.goodsType.message}</span>
                             : null
                     }
-                </div>
-                <label className="text"> Refrigerated </label>
-                <div>
+                <div className="flex-start">
+                <label className="text2"> Refrigerated </label>
                     <input type="checkbox"
                     name="isRefrigerated"
                     checked={isRefrigerated}
                     onChange={ () => setIsRefrigerated( !isRefrigerated ) }
                     />
-                </div>
-                <label className="text"> Hazardous </label>
-                <div>
+                </div>         
+                <div className="flex-start">
+                <label className="text2"> Hazardous </label>
                     <input type="checkbox"
                     name="allowHazardous"
                     checked={allowHazardous}
                     onChange={ () => setAllowHazardous( !allowHazardous ) }
                     />
-               
                 </div>
-                <div>
-                    <button type="submit">Add Capacity</button>
+                <div >
+                    <button type="submit">Save Capacity</button>
                     <button onClick={ () => navigate("/capacities")}>Cancel</button>
                 </div>
+                <img src="/images/FREIGHT1.png"  alt="story" width="350" height="350" />
             </form>
             </div>
+            </div>
+            </div>
+            </motion.div>
         </div>
     )
 };

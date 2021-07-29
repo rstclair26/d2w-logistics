@@ -6,12 +6,20 @@
 
 }
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
-
-.App , .container{
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+.App{
   min-height: 100vh;
   text-align: center;
   justify-content:center;
   align-items:center;
+}
+
+.container{
+    min-height: 100vh;
+    text-align: center;
+    justify-content:center;
+    align-items:center;
+    
 }
 
 .getcontainer{
@@ -26,8 +34,8 @@
   justify-content:center;
   flex-direction: column;
   align-items:center;
-  min-width:80ch;
-  min-height: 65vh;
+  min-width:70ch;
+  height: 90vh;
   border: solid 1px #cc644a;
   background-image: url("./images/freight.jpg");
   object-fit: cover;
@@ -39,6 +47,7 @@
   -webkit-backdrop-filter: blur( 16.0px );
   border-radius: 20px;
   padding: 20px;
+  position: relative;
   border: 2px solid rgba( 255, 255, 255, 0.18 );
 }
 .box-dashboard-2{
@@ -47,18 +56,90 @@
   flex-direction: column;
   align-items:center;
   min-width:20ch;
-  min-height: 0vh;
+  height: 120vh;
   backdrop-filter: blur( 16.0px );
   -webkit-backdrop-filter: blur( 16.0px );
   border-radius: 5px;
   padding: 20px;
   margin-top:  20px;
   object-fit: cover;
+  background-image: url("./images/maps.png") ;
+}
+.wrapper{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: flex-start;
+  min-width:70ch;
+  background-size: cover;
+  background-image: url("./images/freight-bg.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 10px 25px 3px rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.0px );
+  -webkit-backdrop-filter: blur( 16.0px );
+  border-radius: 20px;
+  padding: 20px;
+}
+.confirmation{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  min-width:70ch;
+  height: 70vh;
+  background-size: cover;
+  background-image: url("./images/freight-bg.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 10px 25px 3px rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.0px );
+  -webkit-backdrop-filter: blur( 16.0px );
+  border-radius: 20px;
+  padding: 20px;
+  color:rgb(255, 255, 255);
+
+}
+.wrapper2{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: flex-start;
+  min-width:70ch;
+  min-height:90vh;
+  background-size: cover;
+  background-image: url("./images/freight-bg3.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 10px 25px 3px rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.0px );
+  -webkit-backdrop-filter: blur( 16.0px );
+  border-radius: 20px;
+  padding: 20px;
+  border: ridge  black 10px;
+}
+
+
+.box-dashboard-3{
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items:center;
+  position:relative;
+  width:100%;
+  height: 120vh;
+  backdrop-filter: blur( 16.0px );
+  -webkit-backdrop-filter: blur( 16.0px );
+  border-radius: 5px;
+  margin-top:  20px;
+  object-fit: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
+  background-image: url("./images/maps.png") ;
 }
+
+
 img{
   object-fit: cover;
 }
@@ -68,10 +149,19 @@ img{
   align-items:center;
   display: flex;
   position: sticky;
-  justify-content:space-between;
-  margin-bottom: 30px;
+  justify-content:space-between;  
+  background: #016fb9;
+  background: linear-gradient(90deg,#016fb9 0%, #22aed1 80%);
+  background: -webkit-linear-gradient(90deg,#016fb9 0%, #22aed1 80%);
+  background: -moz-linear-gradient(90deg,#016fb9 0%, #22aed1 80%);
 }
 
+.circle{
+  border-radius: 100%;
+  width: 15%;
+  height: 40%;
+  margin: 20px;
+}
 
 table {
   position:relative;
@@ -94,15 +184,18 @@ table {
   background-position: center;
 }
 
+.waves{
+  overflow: hidden;
+}
 
 td, th {  
-  border-radius: 5px;
+  border-radius: 1px;
   width: 15ch;
   height: 2vh;
   padding: 0.5rem;
   border: 2px solid;
-  border-color: #1d1d202a;
-  background-color: #4f535821;
+  border-color: #3a3434;
+  background-color: #afa98df3;
 }
 thead{
   font-size: 1.1rem;
@@ -110,7 +203,7 @@ thead{
 }
 tbody tr:hover{
   color: white;
-  background-color: #4f5358dc;
+  background-color: #444a50f5;
   width: 300px;
   box-shadow: 0 2px 15px 0 rgba( 31, 38, 135, 0.37 );
 }
@@ -140,9 +233,12 @@ tbody tr:hover{
 
 main{
   display: flex;
+  min-height: 100vh;
+  padding-top: 75px;
   position: relative;
   justify-content:space-evenly;
   flex-direction: row;
+  background-image: url("./images/maps.png");
 }
 
 
@@ -172,13 +268,29 @@ select{
 }
 
 .main-text{
-  font-family: 'Mulish', sans-serif;
-  color: rgb(0, 0, 0);
+  font-family: 'Ubuntu', sans-serif;
+  color: #182825;
+  margin-bottom: 30px;
+  font-size: 4rem;
+  text-shadow: 1px 1px 2px rgb(1, 2, 4);
+}
+.main-text2{
+  font-family: 'Mulish', sans-serif;  
+  color: #182825;
   margin-bottom: 30px;
   font-size: 4rem;
   text-shadow: 1px 1px 2px rgb(1, 2, 4);
 }
 
+.main-text-details{
+  background-color: #2F2F2F;
+  font-family: 'Mulish', sans-serif;  
+  color: #eeeeee;
+  font-size: 3rem;
+  border-radius: 5px;
+  margin: 40px;
+  text-shadow: 1px 1px 2px rgb(1, 2, 4);
+}
 .error-text{
   color: rgb(250, 250, 250);
   font-family: 'Mulish', sans-serif;
@@ -210,6 +322,26 @@ input:hover{
 }
 
 
+.text2{
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: left;
+  font-weight: 700;
+}
+
+.text2{
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: left;
+  font-weight: 700;
+}
+
 button{
   font-size: 1.1rem;
   font-weight: 650;
@@ -231,7 +363,57 @@ button:hover{
   color: rgb(7, 4, 4);
 }
 
+.add-btn{
+  font-size: 1.1rem;
+  font-weight: 650;
+  margin: 20px;
+  font-family: 'Mulish', sans-serif;
+  color: rgb(255, 255, 255);
+  width: 25ch;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: solid gray;
+  color: rgba(255, 255, 255, 0.96);
+  background: #150578;
+  box-shadow:  2px 5px 4px black;
+  width: 30ch;
+  height: 8vh;
+}
+.add-btn:hover{
+  font-size: 1.1rem;
+  border: 3px solid #6D8EA0;
+  background: #d4dfee;
+  color: rgb(7, 4, 4);  
+  width: 30ch;
+  height: 8vh;
+}
 
+
+.inquire-btn{
+  font-size: 1.1rem;
+  font-weight: 650;
+  margin: 20px;
+  font-family: 'Mulish', sans-serif;
+  color: rgb(255, 255, 255);
+  width: 25ch;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: solid gray;
+  color: rgba(255, 255, 255, 0.96);
+  background: #150578;
+  box-shadow:  2px 5px 4px black;
+  border-radius: 20px;
+}
+.inquire-btn:hover{
+  font-size: 1.1rem;
+  border: 3px solid #6D8EA0;
+  background: #d4dfee;
+  color: rgb(7, 4, 4);  
+}
+
+.btn-div{
+  display: inline-block;
+}
 
 .logout{
   margin: 20px;
@@ -252,4 +434,54 @@ button:hover{
   background: #df3933;
   color: rgb(7, 4, 4);
 
+}
+
+.font-mod{
+  font-size: 1.1rem;
+  font-weight:600;
+  font-family: 'Mulish', sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+
+.font-mod2{
+  font-size: 1.1rem;
+  font-weight:600;
+  font-family: 'Mulish', sans-serif;
+  padding: 3px; 
+}
+
+
+.font-mod3{
+  display: inline;
+  font-size: 1.7rem;
+  font-weight:600;
+  font-family: 'Mulish', sans-serif;
+}
+
+
+.text-wrapper{
+  width: 75ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-start{ 
+  display: flex;
+  justify-content: space-between;
+  flex-direction:row;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+
+.flex-start2{ 
+  display: flex;
+  flex-direction:row;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
 }

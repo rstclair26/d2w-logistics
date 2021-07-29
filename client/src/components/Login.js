@@ -1,4 +1,4 @@
-import React ,{useState, useEffect} from 'react';
+import React ,{useState} from 'react';
 import { Link , navigate} from '@reach/router';
 import {motion} from 'framer-motion';
 import axios from 'axios';
@@ -39,13 +39,12 @@ return (
     <div className="container">
         <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
         <header className="header">
-            <Link to="/">
-            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="300"  height="300"/>
-            </Link>
+            <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="200"  height="200"/>
+
         </header> 
         <main>
             <div className="blob"> <img src="/images/business.png" alt="blob" width="600" height="600"/> 
-            <h1 className="main-text">Welcome to D2W Logistics</h1>
+            <h1 className="main-text2">Welcome to D2W Logistics</h1>
         </div>
                 <div className="box-dashboard">       
                 <img src="/images/ship.png" alt="ship-logo" width="75" height="75"/>                    
@@ -70,15 +69,16 @@ return (
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         </div>
-                        <button type="submit">Login</button>
+                        <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }}  type="submit">Login</motion.button>
                         <hr/>            
                     </form>
                     <Link to="/signup"> {/*   redirect to registration  */}
-                        <button  type="submit" value="New Registration">New Registration </button>
+                        <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }}   type="submit" value="New Registration">Sign Up</motion.button>
                     </Link>
                     </div>
-        
+
         </main>
+
         </motion.div>
     </div>
 );

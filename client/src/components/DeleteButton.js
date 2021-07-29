@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { navigate} from '@reach/router';
+import {motion} from 'framer-motion';
 import axios from 'axios';
-import { navigate } from '@reach/router';
 
 const DeleteButton = (props) => {
-    const [ d2wLogisticsDBId, setD2wLogisticsDB ] = useState (props.id);
+
     const deleteCapacity = (d2wLogisticsDBId) => {
         axios.delete(`http://localhost:8000/api/capacities/${ d2wLogisticsDBId }`)
             .then((res) => {
@@ -16,7 +17,7 @@ const DeleteButton = (props) => {
             });
     }
     return (
-        <button onClick={ () => deleteCapacity(props._id) }>Delete</button>
+        <motion.button className="circle" onClick={ () => deleteCapacity(props._id) }><img src="/images/delete (1).png" alt="date" width="90" height="90"/> </motion.button>
     )
 }
 
