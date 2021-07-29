@@ -94,7 +94,7 @@ const Details = (props) => {
                                 <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="circle" onClick={ () => navigate("/capacities")}>   <img src="/images/back (2).png" alt="date" width="90" height="90"/> </motion.button>
                                 <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="circle" onClick={ () => navigate("/capacities/"+ d2wLogisticsDBId._id+"/edit")}><img src="/images/edit (2).png" alt="date" width="70" height="70"/> </motion.button>
                                 <DeleteButton _id={ d2wLogisticsDBId._id }/>
-                                <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="add-btn" onClick={ () => navigate("/success")}>Confirm Inquiry</motion.button>
+                                <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} className="add-btn" onClick={ () => navigate("/success/"+ d2wLogisticsDBId._id)}>Confirm Inquiry</motion.button>
                         </div>
 
                     </div>    

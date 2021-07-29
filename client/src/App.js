@@ -23,7 +23,7 @@ function App() {
         <Create path="/capacities/create" />
         <Edit path="/capacities/:id/edit" />
         <Details path="/capacities/:id"/> 
-        <Confirmation path="/success"/>
+        <Confirmation path="/success/:id"/>
       </Router>
     </div>
   );
