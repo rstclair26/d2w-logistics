@@ -9,6 +9,7 @@ const GetAll = (props) => {
     const [ allD2wLogisticsDB, setAllD2wLogisticsDB ] = useState([]); // notes : put in an array, as there is an array of objects expected, see postman which gets back and array of objects
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         axios.get("http://localhost:8000/api/capacities") //notes: use the same string that works for a 'get' in postman
             .then((res) => {
                 console.log(res.data); //this is just checking that the data returned correctly in the console
