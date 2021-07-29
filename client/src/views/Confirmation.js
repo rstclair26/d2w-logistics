@@ -28,7 +28,7 @@ const Confirmation = ( )=>{
                         <motion.button  whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }} onClick={ () => navigate("/capacities")}>Back</motion.button>
                         </motion.div>
                 </div>
-                <img className="d2w-logo"src="/images/FREIGHT4.png"  alt="d2w-logo" width="500"  height="500"/>
+                <img className="d2w-logo"src="/images/business.png"  alt="d2w-logo" width="500"  height="500"/>
             </div>
         </div>
     )

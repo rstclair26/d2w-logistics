@@ -172,7 +172,7 @@ const Create = (props) => {
                     <button type="submit">Save Capacity</button>
                     <button onClick={ () => navigate("/capacities")}>Cancel</button>
                 </div>
-                <img src="/images/FREIGHT1.png"  alt="story" width="350" height="350" />
+                <img src="/images/FREIGHT1.png"  alt="story" width="300" height="300" />
             </form>
             </div>
             </div>
