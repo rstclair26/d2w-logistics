@@ -62,9 +62,7 @@ return (
     <div className="container">
         <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
         <header className="header">
-            <Link to="/">
             <img className="d2w-logo"src="D2W.PNG"  alt="d2w-logo" width="200"  height="200"/>
-            </Link>
         </header>  
         <main>
             <div className="blob"> <img src="/images/business.png" alt="blob" width="600" height="600"/> 

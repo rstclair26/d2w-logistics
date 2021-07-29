@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items:center;
   min-width:70ch;
-  height: 120vh;
+  height: 90vh;
   border: solid 1px #cc644a;
   background-image: url("./images/freight.jpg");
   object-fit: cover;
