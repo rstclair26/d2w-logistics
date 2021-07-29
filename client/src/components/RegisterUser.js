@@ -1,7 +1,7 @@
 import React ,{useState} from 'react';
 import {motion} from 'framer-motion';
 import { animationOne, transition} from '../animations/Animation';
-import { Link , navigate} from '@reach/router';
+import { navigate} from '@reach/router';
 import axios from 'axios';
 
 const RegisterUser =(props) =>{

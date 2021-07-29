@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState, useEffect} from 'react';
 import {navigate} from '@reach/router';
 import {motion} from 'framer-motion';
 import axios from 'axios';
@@ -16,7 +16,6 @@ const Create = (props) => {
     const [ isRefrigerated, setIsRefrigerated ] = useState(false);
     const [ allowHazardous, setAllowHazardous ] = useState(false);
     const [ errs, setErrs ] = useState({});
-
     const primaryMarketArr = ["Automotive",
     "Clothing Retail",
     "Electronics",
@@ -32,6 +31,9 @@ const Create = (props) => {
     "USLAX",
     "USNYC"];
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[]);
     const submitHandler = (e) => {
         e.preventDefault(); //bring in the event with 'e' and prevent default refresh of capacity
 
@@ -73,7 +75,7 @@ const Create = (props) => {
             <h1 className="main-text-details">New Capacity</h1> 
             <form onSubmit={submitHandler}>
                 <div className="flex-start">
-                    <label className="text2"> Departure Date </label>
+                    <label className="text3"> Departure Date </label>
                     <input type="date"
                     name="departureDate"
                     value={departureDate}
@@ -87,7 +89,7 @@ const Create = (props) => {
                             : null
                     }
                 <div className="flex-start">
-                <label className="text2"> Departure Port </label>
+                <label className="text3"> Departure Port </label>
                     <select  name="departurePort" value={ departurePort }  onChange={ (e) => setDeparturePort( e.target.value ) }>
                                                 <option value=""></option>
                                                 {
@@ -104,7 +106,7 @@ const Create = (props) => {
                             : null
                     }
                 <div className="flex-start">
-                <label className="text2"> Destination Port </label>
+                <label className="text3"> Destination Port </label>
                     <select  name="destinationPort" value={ destinationPort }  onChange={ (e) => setDestinationPort( e.target.value ) }>
                                                 <option value=""></option>
                                                 {
@@ -121,14 +123,13 @@ const Create = (props) => {
                             : null
                     }
                 <div className="flex-start">
-                <label className="text2"> Number of FEUs </label>
+                <label className="text3"> Number of FEUs </label>
                     <input type="number"
                     name="numFeuAvailable"
                     min="0"
                     value={numFeuAvailable}
                     onChange={ (e) => setNumFeuAvailable( e.target.value ) }
-                    />
-                   
+                    />            
                 </div>
                 {
                         errs.numFeuAvailable ?
@@ -136,7 +137,7 @@ const Create = (props) => {
                             : null
                     }
                 <div className="flex-start">
-                <label className="text2"> Content Classification </label>
+                <label className="text3"> Content Classification </label>
                 <select  name="goodsType" value={ goodsType } onChange={(e) => setGoodsType(e.target.value)}>
                                                 <option value=""></option>
                                                 {
@@ -153,7 +154,7 @@ const Create = (props) => {
                             : null
                     }
                 <div className="flex-start">
-                <label className="text2"> Refrigerated </label>
+                <label className="text3"> Refrigerated </label>
                     <input type="checkbox"
                     name="isRefrigerated"
                     checked={isRefrigerated}
@@ -161,7 +162,7 @@ const Create = (props) => {
                     />
                 </div>         
                 <div className="flex-start">
-                <label className="text2"> Hazardous </label>
+                <label className="text3"> Hazardous </label>
                     <input type="checkbox"
                     name="allowHazardous"
                     checked={allowHazardous}

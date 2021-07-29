@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import './App.css';
 import Login from './components/Login';
 import RegisterUser from './components/RegisterUser';
@@ -11,8 +11,9 @@ import Confirmation from './views/Confirmation';
 import { Router } from '@reach/router'; // since router is not exported as default {} are required
 
 function App() {
-
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
   return (
     <div className="App">
       <Router>
