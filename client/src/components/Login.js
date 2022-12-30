@@ -43,7 +43,8 @@ return (
 
         </header> 
         <main>
-            <div className="blob"> <img src="/images/business.png" alt="blob" width="600" height="600"/> 
+        <div className="blob"> 
+            <img src="/images/business.png" alt="blob" width="600" height="600"/> 
             <h1 className="main-text2">Welcome to D2W Logistics</h1>
         </div>
                 <div className="box-dashboard">       

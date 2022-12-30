@@ -18,6 +18,7 @@ const Confirmation = (props) => {
             .then((res) => {
                 console.log(res.data);
                 setCapacity(res.data);
+                setUserCookie(res.data);
             })
             .catch((err) => {
                 console.log(err);
